@@ -1,0 +1,16 @@
+.assignments-container {
+  background: #f5fbfc;
+  border-radius: 20px;
+  padding: 24px;
+}
+
+.assignment-list {
+  margin-top: 20px;
+}
+
+.assignment-card {
+  background: #f2f0ec;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 12px;
+}
