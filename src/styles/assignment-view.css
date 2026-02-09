@@ -1,0 +1,201 @@
+.assignment-view-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+/* Back button */
+.av-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #4ba7b5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+.av-back-btn:hover {
+  background: #3d9aa8;
+}
+
+/* Header bar with title + search */
+.av-header {
+  background: #fff;
+  border-radius: 16px;
+  padding: 20px 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.av-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1f2d3d;
+  margin: 0;
+}
+
+.av-search {
+  position: relative;
+}
+
+.av-search input {
+  padding: 6px 32px 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  width: 160px;
+  background: #fff;
+}
+
+.av-search input:focus {
+  border-color: #4ba7b5;
+}
+
+.av-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+}
+
+/* Main content card */
+.av-content-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px 32px 40px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+/* Edit button row */
+.av-edit-row {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 12px;
+}
+
+.av-edit-btn {
+  background: #4ba7b5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 28px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.av-edit-btn:hover {
+  background: #3d9aa8;
+}
+
+/* Details section */
+.av-details {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  padding: 0 60px;
+}
+
+.av-detail-line {
+  margin: 0;
+  font-size: 15px;
+  color: #1f2d3d;
+}
+
+.av-label {
+  font-weight: 400;
+  color: #1f2d3d;
+}
+
+.av-value-bold {
+  font-weight: 700;
+  color: #1f2d3d;
+}
+
+/* Dates row */
+.av-dates {
+  display: flex;
+  gap: 120px;
+}
+
+/* Description */
+.av-description {
+  font-size: 15px;
+  color: #1f2d3d;
+  line-height: 1.75;
+}
+
+.av-desc-text {
+  white-space: pre-line;
+}
+
+/* File attachment card */
+.av-file-card {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  background: #e0e0e0;
+  border-radius: 12px;
+  padding: 14px 28px 14px 14px;
+  width: fit-content;
+  margin: 12px auto 0;
+}
+
+.av-file-icon-box {
+  background: #c5c5c5;
+  border-radius: 10px;
+  width: 68px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.av-file-icon {
+  font-size: 34px;
+  color: #666;
+}
+
+.av-file-name {
+  font-size: 14px;
+  font-weight: 500;
+  color: #1f2d3d;
+}
+
+/* View Submission button */
+.av-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.av-view-submission-btn {
+  background: #38b89a;
+  color: #fff;
+  border: none;
+  border-radius: 24px;
+  padding: 10px 32px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.av-view-submission-btn:hover {
+  background: #2ea88a;
+}

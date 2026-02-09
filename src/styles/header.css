@@ -1,26 +1,15 @@
 .header {
   height: 60px;
-  display: grid;
-  grid-template-columns: 1fr auto 1fr;
+  display: flex;
+  justify-content: flex-end;
   align-items: center;
   padding: 0 24px;
-}
-
-.select-course-btn {
-  background: #3f7f63;
-  color: white;
-  border: none;
-  padding: 8px 24px;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
+  background: #b7d3d6;
 }
 
 .profile-img {
   width: 40px;
   height: 40px;
-  justify-self: end;
   border-radius: 50%;
   object-fit: cover;
 }

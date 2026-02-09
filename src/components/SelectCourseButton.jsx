@@ -1,11 +1,7 @@
-import React from 'react';
-
-const SelectCourseButton = () => {
+export default function SelectCourseButton() {
   return (
-    <button className="select-course-btn">
+    <button className="select-course-button">
       Select Course
     </button>
   );
-};
-
-export default SelectCourseButton;
+}

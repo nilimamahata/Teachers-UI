@@ -1,9 +1,12 @@
 import { MdDashboard } from "react-icons/md";
-import { MdMenuBook } from "react-icons/md";
-import "../styles/dashboard.css";
+import { FaChalkboardTeacher } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 import logo from "../assets/Vector.svg";
+import "../styles/sidebar.css";
 
 export default function Sidebar() {
+  const navigate = useNavigate();
+
   return (
     <aside className="sidebar">
       <div className="sidebar-logo">
@@ -14,14 +17,14 @@ export default function Sidebar() {
         </div>
       </div>
 
-      <nav className="sidebar-menu">
-        <div className="menu-item active">
-          <MdDashboard className="menu-icon" />
+      <nav>
+        <div className="menu-item" onClick={() => navigate("/teacher/dashboard")}>
+          <MdDashboard />
           <span>Dashboard</span>
         </div>
 
-        <div className="menu-item">
-          <MdMenuBook className="menu-icon" />
+        <div className="menu-item" onClick={() => navigate("/teacher/classes")}>
+          <FaChalkboardTeacher />
           <span>Classes</span>
         </div>
 
