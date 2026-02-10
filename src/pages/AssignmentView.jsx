@@ -17,15 +17,11 @@ export default function AssignmentView() {
     });
   };
 
-  const title = state?.title || "Chapter 1";
-  const description =
-    state?.description ||
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit.\nMauris sit amet massa non ante consectetur finibus ac nec nulla.\nEtiam sem diam, molestie euismod sapien ac, congue vehicula quam.\nIn hac habitasse platea dictumst.";
-  const dateIssued = state?.dateIssued
-    ? formatDate(state.dateIssued)
-    : "21 Jan 2026";
-  const dueDate = state?.dueDate ? formatDate(state.dueDate) : "28 Jan 2026";
-  const fileName = state?.fileName || "Science biology assignment [file name]";
+  const title = state?.title;
+  const description = state?.description;
+  const dateIssued = state?.dateIssued ? formatDate(state.dateIssued) : null;
+  const dueDate = state?.dueDate ? formatDate(state.dueDate) : null;
+  const fileName = state?.fileName;
 
   return (
     <div className="assignment-view-page">
@@ -43,40 +39,75 @@ export default function AssignmentView() {
 
       <div className="av-content-card">
         <div className="av-edit-row">
-          <button className="av-edit-btn">Edit</button>
+          <button
+            className="av-edit-btn"
+            onClick={() =>
+              navigate("/teacher/classes/assignments/create", {
+                state: {
+                  title,
+                  description: state?.description,
+                  dueDate: state?.dueDate,
+                  fileName,
+                },
+              })
+            }
+          >
+            Edit
+          </button>
         </div>
 
         <div className="av-details">
-          <p className="av-detail-line">
-            <span className="av-label">Title: </span>
-            <span className="av-value-bold">{title}</span>
-          </p>
-
-          <div className="av-dates">
+          {title && (
             <p className="av-detail-line">
-              <span className="av-label">Date Issued: </span>
-              <span className="av-value-bold">{dateIssued}</span>
+              <span className="av-label">Title: </span>
+              <span className="av-value-bold">{title}</span>
             </p>
-            <p className="av-detail-line">
-              <span className="av-label">Due Date: </span>
-              <span className="av-value-bold">{dueDate}</span>
-            </p>
-          </div>
+          )}
 
-          <div className="av-description">
-            <span className="av-label">Description: </span>
-            <span className="av-desc-text">{description}</span>
-          </div>
-
-          <div className="av-file-card">
-            <div className="av-file-icon-box">
-              <FaRegFolder className="av-file-icon" />
+          {(dateIssued || dueDate) && (
+            <div className="av-dates">
+              {dateIssued && (
+                <p className="av-detail-line">
+                  <span className="av-label">Date Issued: </span>
+                  <span className="av-value-bold">{dateIssued}</span>
+                </p>
+              )}
+              {dueDate && (
+                <p className="av-detail-line">
+                  <span className="av-label">Due Date: </span>
+                  <span className="av-value-bold">{dueDate}</span>
+                </p>
+              )}
             </div>
-            <span className="av-file-name">{fileName}</span>
-          </div>
+          )}
+
+          {description && (
+            <div className="av-description">
+              <span className="av-label">Description: </span>
+              <span className="av-desc-text">{description}</span>
+            </div>
+          )}
+
+          {fileName && (
+            <div className="av-file-card">
+              <div className="av-file-icon-box">
+                <FaRegFolder className="av-file-icon" />
+              </div>
+              <span className="av-file-name">{fileName}</span>
+            </div>
+          )}
 
           <div className="av-actions">
-            <button className="av-view-submission-btn">View Submission</button>
+            <button
+              className="av-view-submission-btn"
+              onClick={() =>
+                navigate("/teacher/classes/assignments/view/submissions", {
+                  state: { title: `${title} - Submissions` },
+                })
+              }
+            >
+              View Submission
+            </button>
           </div>
         </div>
       </div>

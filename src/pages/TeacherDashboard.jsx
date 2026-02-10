@@ -16,9 +16,24 @@ export default function TeacherDashboard() {
         <div className="dash-live-section">
           <h3 className="dash-section-title">Upcoming Live Sessions</h3>
           <div className="dash-live-row">
-            <LiveSessionCard image="https://picsum.photos/seed/books1/300/150" />
-            <LiveSessionCard image="https://picsum.photos/seed/pencils/300/150" />
-            <LiveSessionCard image="https://picsum.photos/seed/flowers2/300/150" />
+            <LiveSessionCard
+              subject="Subject Name"
+              topic="This Topic"
+              startsIn="Time:"
+              timing="Session Timing"
+            />
+            <LiveSessionCard
+              subject="Biology 101"
+              topic="Introduction to Genetics"
+              startsIn="15min/1day"
+              timing="10:00 AM - 11:30 AM"
+            />
+            <LiveSessionCard
+              subject="Art History"
+              topic="Introduction to Modernism"
+              startsIn="30 min"
+              timing="1:00 PM - 2:30 PM"
+            />
           </div>
         </div>
 
@@ -68,22 +83,27 @@ export default function TeacherDashboard() {
           <div className="dash-card-body">
             <NotificationItem
               title="New Assignment Updated"
+              barColor="green"
               lines={["Subject Name: Topic/Title", "Teacher: Teacher's Name", "Due Date: 20 Feb 26 (Friday)"]}
             />
             <NotificationItem
               title="New Live Session Updated"
+              barColor="teal"
               lines={["Subject Name", "Teacher: Teacher's Name", "20 Feb 26 (Friday)", "10:00 AM - 11:30 AM"]}
             />
             <NotificationItem
               title="New Assignment Updated"
+              barColor="red"
               lines={["Subject Name: Topic/Title", "Teacher: Teacher's Name", "Due Date: 20 Feb 26 (Friday)"]}
             />
             <NotificationItem
               title="New Quiz Updated"
+              barColor="purple"
               lines={["Subject Name: Topic/Title", "Teacher: Teacher's Name", "Due Date: 20 Feb 26 (Friday)"]}
             />
             <NotificationItem
               title="New Live Session Updated"
+              barColor="teal"
               lines={["Subject Name", "Teacher: Teacher's Name", "20 Feb 26 (Friday)", "10:00 AM - 11:30 AM"]}
             />
           </div>

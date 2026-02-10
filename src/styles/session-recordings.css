@@ -1,0 +1,149 @@
+.sr-page {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  height: 100%;
+}
+
+.sr-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #4ba7b5;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 6px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  width: fit-content;
+  flex-shrink: 0;
+}
+
+.sr-back-btn:hover {
+  background: #3d9aa8;
+}
+
+.sr-content {
+  background: #f5fbfc;
+  border-radius: 16px;
+  padding: 28px 32px;
+  flex: 1;
+  overflow-y: auto;
+  min-height: 0;
+}
+
+.sr-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.sr-title {
+  font-size: 22px;
+  font-weight: 700;
+  color: #1f2d3d;
+  margin: 0;
+}
+
+.sr-search {
+  position: relative;
+}
+
+.sr-search input {
+  padding: 6px 32px 6px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  width: 180px;
+  background: #fff;
+}
+
+.sr-search input:focus {
+  border-color: #4ba7b5;
+}
+
+.sr-search-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #999;
+  font-size: 14px;
+}
+
+.sr-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 24px;
+}
+
+.sr-add-btn {
+  background: #4ba7b5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.sr-add-btn:hover {
+  background: #3d9aa8;
+}
+
+.sr-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.sr-card {
+  background: #0e9aa7;
+  border-radius: 12px;
+  padding: 20px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 160px;
+}
+
+.sr-card-subject {
+  font-size: 15px;
+  font-weight: 700;
+  margin: 0 0 2px 0;
+}
+
+.sr-card-topic {
+  font-size: 12px;
+  margin: 0 0 16px 0;
+  opacity: 0.85;
+}
+
+.sr-card-teacher {
+  font-size: 13px;
+  margin: 0;
+  flex: 1;
+}
+
+.sr-card-bottom {
+  display: flex;
+  justify-content: flex-end;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.sr-card-date {
+  font-size: 12px;
+  opacity: 0.85;
+}
+
+.sr-card-duration {
+  font-size: 14px;
+  font-weight: 700;
+}

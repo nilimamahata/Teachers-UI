@@ -1,7 +1,7 @@
 import { MdDashboard } from "react-icons/md";
 import { FaChalkboardTeacher } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
-import logo from "../assets/Vector.svg";
+import logo from "../assets/Shiksha.svg";
 import "../styles/sidebar.css";
 
 export default function Sidebar() {

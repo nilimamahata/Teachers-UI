@@ -3,7 +3,7 @@ import { IoChevronBack } from "react-icons/io5";
 import { FiSearch } from "react-icons/fi";
 import "../styles/assignments.css";
 
-const assignmentsData = [
+const defaultAssignments = [
   {
     id: "Assignment - ID",
     title: "(TITLE) Integration - I",
@@ -62,8 +62,31 @@ const assignmentsData = [
   },
 ];
 
+const formatDate = (dateStr) => {
+  const date = new Date(dateStr);
+  return date.toLocaleDateString("en-GB", {
+    day: "2-digit",
+    month: "short",
+    year: "numeric",
+  });
+};
+
 export default function Assignments() {
   const navigate = useNavigate();
+
+  // Load user-created assignments from localStorage
+  const saved = JSON.parse(localStorage.getItem("assignments") || "[]");
+  const createdAssignments = saved.map((a) => ({
+    id: "Assignment - ID",
+    title: `(TITLE) ${a.title}`,
+    issuedOn: formatDate(a.dateIssued),
+    dueOn: formatDate(a.dueDate),
+    turnedIn: "0/10",
+    // keep raw data for navigation
+    _raw: a,
+  }));
+
+  const allAssignments = [...createdAssignments, ...defaultAssignments];
 
   return (
     <div className="assignments-page">
@@ -86,7 +109,7 @@ export default function Assignments() {
         </div>
 
         <div className="assignments-list">
-          {assignmentsData.map((assignment, index) => (
+          {allAssignments.map((assignment, index) => (
             <div className="assignment-row" key={index}>
               <div className="assignment-info">
                 <span className="assignment-id">{assignment.id}</span>
@@ -104,7 +127,18 @@ export default function Assignments() {
                 <span className="assignment-label">Turned In:</span>
                 <span className="assignment-value bold">{assignment.turnedIn}</span>
               </div>
-              <button className="assignment-view-btn">View</button>
+              <button
+                className="assignment-view-btn"
+                onClick={() =>
+                  navigate("/teacher/classes/assignments/view/submissions", {
+                    state: {
+                      title: `Mathematics ${assignment.id}`,
+                    },
+                  })
+                }
+              >
+                View
+              </button>
             </div>
           ))}
         </div>

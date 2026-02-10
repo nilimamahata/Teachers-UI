@@ -5,6 +5,14 @@ import Classes from "../pages/Classes";
 import Assignments from "../pages/Assignments";
 import CreateAssignment from "../pages/CreateAssignment";
 import AssignmentView from "../pages/AssignmentView";
+import SubmissionView from "../pages/SubmissionView";
+import Quizzes from "../pages/Quizzes";
+import CreateQuiz from "../pages/CreateQuiz";
+import StudyMaterials from "../pages/StudyMaterials";
+import UploadMaterial from "../pages/UploadMaterial";
+import SessionRecordings from "../pages/SessionRecordings";
+import UploadRecording from "../pages/UploadRecording";
+import LiveSessions from "../pages/LiveSessions";
 
 export default function TeacherRoutes() {
   return (
@@ -16,6 +24,14 @@ export default function TeacherRoutes() {
         <Route path="/teacher/classes/assignments" element={<Assignments />} />
         <Route path="/teacher/classes/assignments/create" element={<CreateAssignment />} />
         <Route path="/teacher/classes/assignments/view" element={<AssignmentView />} />
+        <Route path="/teacher/classes/assignments/view/submissions" element={<SubmissionView />} />
+        <Route path="/teacher/classes/quizzes" element={<Quizzes />} />
+        <Route path="/teacher/classes/quizzes/create" element={<CreateQuiz />} />
+        <Route path="/teacher/classes/study-materials" element={<StudyMaterials />} />
+        <Route path="/teacher/classes/study-materials/upload" element={<UploadMaterial />} />
+        <Route path="/teacher/classes/session-recordings" element={<SessionRecordings />} />
+        <Route path="/teacher/classes/session-recordings/upload" element={<UploadRecording />} />
+        <Route path="/teacher/classes/live-sessions" element={<LiveSessions />} />
       </Route>
     </Routes>
   );

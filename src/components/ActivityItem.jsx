@@ -9,7 +9,6 @@ export default function ActivityItem({ date, label, labelColor, lines }) {
           <p key={i} className="act-line">{line}</p>
         ))}
       </div>
-      <span className="badge-friday">Friday</span>
     </div>
   );
 }
